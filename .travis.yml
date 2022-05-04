@@ -13,7 +13,7 @@ before_install:
   - gcloud auth activate-service-account --key-file multi-k8s-349112-ff89ec2f3978.json
   - gcloud config set project multi-k8s-349112
   - gcloud config set compute/zone europe-central2
-  - glocud container clusters get-credentials multi-cluster
+  - gcloud container clusters get-credentials multi-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t valtrenta/react-test -f ./client/Dockerfile.dev ./client
 script:
